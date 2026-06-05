@@ -14,6 +14,5 @@ class Solution(object):
             if num not in d:
                 d[num]=rank
                 rank+=1 
-        for i in range(len(arr)):
-            arr[i]=d.get(arr[i])
-        return arr
+        return [d[x] for x in arr]
+         
