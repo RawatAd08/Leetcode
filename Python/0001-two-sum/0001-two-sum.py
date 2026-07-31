@@ -5,9 +5,8 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        d=dict()
-        for i in range(len(nums)):
-            need=target-nums[i]     
-            if need in d:
-                return [i,d[need]]
-            d[nums[i]]=i
+        n=len(nums)
+        for i in range(0,n-1):
+            for j in range(i+1,n):
+                if nums[i]+nums[j]==target:
+                    return [i,j]
