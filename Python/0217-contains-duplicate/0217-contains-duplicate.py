@@ -5,9 +5,12 @@ class Solution(object):
         :rtype: bool
         """
         freq={}
-        for num in nums:
-            freq[num]=freq.get(num,0)+1
+        #count frequency
+        for key in nums:
+            freq[key]=freq.get(key,0)+1
+        #if any vlaue of key>1,contain duplicate
         for key in freq:
-            if freq[key]>1:
+            if freq.get(key)>1:
                 return True
         return False
+        
