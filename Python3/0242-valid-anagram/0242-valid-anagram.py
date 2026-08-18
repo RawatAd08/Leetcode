@@ -1,16 +1,23 @@
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        ds={}
-        for key in s:
-            ds[key]=ds.get(key,0)+1
-        dt={}
-        for key in t:
-            dt[key]=dt.get(key,0)+1
-
-        for key in dt:
-            if key  not in ds or dt[key]!=ds[key]:
-                return False
-
-        if len(ds)!=len(dt):
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        m=len(s)
+        n=len(t)
+        if m!=n:
             return False
-        return True
+
+        freq1={}
+        for key1 in s:
+            freq1[key1]=freq1.get(key1,0)+1
+
+        freq2={}
+        for key2 in t:
+            freq2[key2]=freq2.get(key2,0)+1
+
+        if freq1==freq2:
+            return True
+        return False
