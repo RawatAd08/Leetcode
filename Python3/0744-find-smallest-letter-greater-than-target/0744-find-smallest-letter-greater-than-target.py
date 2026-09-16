@@ -3,22 +3,15 @@ class Solution:
         n=len(letters)
         start=0
         end=n-1
-        pos=letters[0]
-
-        if letters[end]==target:
-            return pos
 
         while(start<=end):
             mid=start-(start-end)//2
-            if letters[mid]==target :
-                pos=max(pos,target)
-                start=mid+1
-
-            elif(letters[mid]<target):
-                start=mid+1
-
-            else:
-                pos=letters[mid]
+            if letters[mid]>target:
                 end=mid-1
+            else:
+                start=mid+1
+        
+        if start==n:
+            return letters[0]
 
-        return pos
+        return letters[start]
