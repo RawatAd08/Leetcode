@@ -25,6 +25,5 @@ class Solution:
                 count+=d[val] #add the value
                 
             d[prefix[j]]=d.get(prefix[j],0)+1
-
-        print(d)       
+      
         return count
